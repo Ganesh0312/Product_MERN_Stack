@@ -30,13 +30,10 @@ const CategoryList = () => {
       await axios.delete(
         `http://localhost:8080/category/delete-category/${categoryToDelete}`
       );
-      // Remove the deleted category from the state
       setCategories(
         categories.filter((category) => category._id !== categoryToDelete)
       );
-      // Close the confirmation popup
       setShowDeleteConfirmation(false);
-      // Reset the category to delete
       setCategoryToDelete(null);
     } catch (error) {
       console.error("Error deleting category:", error);
@@ -80,8 +77,12 @@ const CategoryList = () => {
             <thead>
               <tr className="bg-yellow-200">
                 <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  ID
+                </th>
+                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                   Name
                 </th>
+
                 <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                   Description
                 </th>
@@ -104,8 +105,12 @@ const CategoryList = () => {
                     className="hover:bg-gray-50 transition-colors"
                   >
                     <td className="px-6 py-4 whitespace-nowrap">
+                      {category.categoryId}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
                       {category.name}
                     </td>
+
                     <td className="px-6 py-4 whitespace-nowrap">
                       {category.description}
                     </td>

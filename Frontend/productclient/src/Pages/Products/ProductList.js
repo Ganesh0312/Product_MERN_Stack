@@ -79,6 +79,9 @@ const ProductList = () => {
             <thead>
               <tr className="bg-yellow-200">
                 <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  ID
+                </th>
+                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                   Product Name
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -111,6 +114,9 @@ const ProductList = () => {
                     key={product._id}
                     className="hover:bg-gray-50 transition-colors"
                   >
+                    <td className="px-4 py-2 whitespace-nowrap">
+                      {product.productId}
+                    </td>
                     <td className="px-4 py-2 whitespace-nowrap">
                       {product.productName}
                     </td>

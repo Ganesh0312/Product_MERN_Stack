@@ -17,7 +17,7 @@ const addProductController = async (req, res) => {
       image,
     });
     await product.save();
-    res.status(201).send("massage", "Product Added Successfully");
+    res.status(201).send("Product Added Successfully");
   } catch (error) {
     res.status(400).send(error.message);
   }
